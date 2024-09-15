@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Web Mii</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap:500" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </head>
+
+  <body>
+    <div class="warning-container" id="warning-container">
+      <div class="warning-icon"><h1>⚠️WARNING-HEALTH AND SAFETY</h1></div>
+      <p><b>BEFORE ENTERING, READ YOUR OPERATIONS<br> MANUAL FOR IMPORTANT INFORMATION<br>  ABOUT YOUR HEALTH AND SAFETY.</b></p>
+      <p>Also online at<br> <a href="healthsafety/">www.webmii.com/healthsafety/</a></p>
+      <div class="continue-text">Press  <img src="assets/images/spacebar.png" alt="Spacebar" style="vertical-align: middle; height: 30px;">    or  <img src="assets/images/click.png" alt="Spacebar" style="vertical-align: middle; height: 30px;">  to continue.</div>
+    </div>
+
+    <div class="main-menu" id="main-menu">
+      <div class="top-section">
+        <div class="channels">
+          <div class="channels-container">
+            <div class="col">
+              <div class="channel-icon occupied"><img src="assets/images/miichannel-mint2.jpg"><div class="hover" id="1" onmouseover="hover()" onclick="selectChannel(1); zip()" data-img="assets/images/miichannel-mint2.jpg"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="2" onmouseover="hover()" onclick="selectChannel(2); zip()"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="3" onmouseover="hover()" onclick="selectChannel(3)"></div></div>
+          </div>
+          <div class="col">
+              <div class="channel-icon occupied"><img src="assets/images/miichannel-twitter2.jpg"><div class="hover" id="4" onmouseover="hover()" onclick="selectChannel(4); zip()" data-img="assets/images/miichannel-twitter2.jpg"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="5" onmouseover="hover()" onclick="selectChannel(5)"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="6" onmouseover="hover()" onclick="selectChannel(6)"></div></div>
+          </div>
+          <div class="col">
+              <div class="channel-icon blank"><div class="hover" id="7" onmouseover="hover()" onclick="selectChannel(7)"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="8" onmouseover="hover()" onclick="selectChannel(8)"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="9" onmouseover="hover()" onclick="selectChannel(9)"></div></div>
+          </div>
+          <div class="col">
+              <div class="channel-icon blank"><div class="hover" id="10" onmouseover="hover()" onclick="selectChannel(10)"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="11" onmouseover="hover()" onclick="selectChannel(11)"></div></div>
+              <div class="channel-icon blank"><div class="hover" id="12" onmouseover="hover()" onclick="selectChannel(12)"></div></div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="bottom-section">
+        <div class="bottom-title"></div>
+
+        <div class="left-button-container">
+          <div class="left-button"></div>
+          <div class="wii-button corner-button" onmouseover="hover()"></div>
+        </div>
+
+        <div class="date"></div>
+
+        <div class="right-button-container">
+          <div class="right-button"></div>
+          <div class="mail-button corner-button" onmouseover="hover()"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="splash-screen">
+
+    </div>
+
+    <div class="splash-bar">
+      <div class="splash-buttons">
+        <a href="javascript:void(0)" class="btn menu-btn" onmouseover="hover()" onclick="back()">Web Mii</a>
+        <a href="javascript:void(0)" class="btn" onmouseover="hover()" onclick="start()">Start</a>
+      </div>
+    </div>
+
+    <div class="border-topleft border"></div>
+    <div class="border-topright border"></div>
+    <div class="border-bottomleft border"></div>
+    <div class="border-bottomright border"></div>
+
+    <div class="screen-message">
+      <p>It has been detected that your screen resolution may not be compatible with this project. This project is very experiental and as a result, does not scale to some smaller screens. If you're alright with the layout looking a little off, click anywhere to close this message.</p>
+    </div>
+
+
+
+    <div class="sfx">
+      <audio id="startup-music" src="assets/audio/startup.mp3" volume="0.01"></audio>
+      <audio id="bg-music" src="assets/audio/bg-music.mp3" loop volume="0.01"></audio>
+    </div>
+
+    <script>
+      let musicPlayed = false;
+      let selectedChannel = null;
+
+      function selectChannel(channelId) {
+          selectedChannel = channelId;
+          console.log('Selected channel:', selectedChannel);
+          // Add any additional UI changes for selecting a channel here
+      }
+
+      function start() {
+          if (selectedChannel === 1) {
+              window.open('https://launchmynft.io/', '_blank'); // Change this link as needed
+          } else if (selectedChannel === 4) {
+              window.open('https://x.com/frubcoin', '_blank'); // Change this link as needed
+          } else {
+              console.log('No channel selected or invalid channel');
+              // Optionally provide feedback to the user if needed
+          }
+      }
+
+      function handleStart() {
+          if (musicPlayed) {
+              return;
+          }
+          musicPlayed = true;
+          document.querySelector('.main-menu').style.display = 'block';
+          const warningContainer = document.getElementById('warning-container');
+          warningContainer.classList.add('hidden');
+          const startupMusic = document.getElementById('startup-music');
+          startupMusic.play();
+          setTimeout(function() {
+              warningContainer.style.display = 'none';
+              setTimeout(function() {
+                  const bgMusic = document.getElementById('bg-music');
+                  bgMusic.play();
+              }, 0);
+          }, 1650);
+      }
+
+      document.addEventListener('keydown', function(event) {
+          if (event.code === 'Space') {
+              handleStart();
+          }
+      });
+
+      document.addEventListener('click', handleStart);
+      document.addEventListener('touchstart', handleStart);
+</script>
+
+  
+
+    <div class="sfx">
+      <audio id="hover" src="assets/audio/button-hover.mp3"></audio>
+      <audio id="select" src="assets/audio/button-select.mp3"></audio>
+      <audio id="zip" src="assets/audio/zip.mp3"></audio>
+      <audio id="back" src="assets/audio/back.mp3"></audio>
+    </div>
+  </body>
+</html>
