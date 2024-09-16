@@ -258,9 +258,27 @@
       </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</body>
-<!-- partial -->
-  <script  src="./script.js"></script>
+
+ <script>
+        // Function to hide the loading screen with a fade-out effect
+        function hideLoadingScreen() {
+          const loadingScreen = document.getElementById('loading-screen');
+          loadingScreen.style.transition = 'opacity 1s'; // Fade-out effect
+          loadingScreen.style.opacity = '0'; // Set opacity to 0 to hide it
+    
+          // Optional: Remove the loading screen from the DOM after the fade-out
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 1000); // After 1 second (matching the transition time)
+        }
+    
+        // Automatically fade out after 9 seconds
+        setTimeout(hideLoadingScreen, 7500);
+    
+        // Allow user to skip by clicking or tapping
+        document.getElementById('loading-screen').addEventListener('click', hideLoadingScreen);
+        document.getElementById('loading-screen').addEventListener('touchstart', hideLoadingScreen);
+      </script>
 
 </body>
 </html>
