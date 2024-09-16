@@ -303,7 +303,7 @@ body.channel-splash {
 .date {
   position: absolute;
   color: #84868a;
-  font-family: contl;
+  font-family: rodin;
   bottom: 32px;
   left: 50%;
   transform: translate(-50%, 0);
