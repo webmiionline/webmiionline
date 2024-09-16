@@ -303,14 +303,13 @@ body.channel-splash {
 .date {
   position: absolute;
   color: #84868a;
-  font-family: 'Asap', sans-serif;
+  font-family: contl;
   bottom: 32px;
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 40px;
   letter-spacing: -1px;
 }
-
 /* channel splash screen */
 
 .splash-screen {
