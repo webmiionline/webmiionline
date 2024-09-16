@@ -38,12 +38,16 @@ preloadImage.src = 'assets/images/giphy.webp';  // Preload the gif to avoid dela
 
 function hoverOrcaImage(isHovering) {
   const orcaImage = document.getElementById('orcaImage');
+  const hoverSound = document.getElementById('hover'); // Add reference to hover sound
+  
   if (isHovering) {
     orcaImage.src = 'assets/images/giphy.webp';  // Change to the GIF/WEBP when hovering
+    hoverSound.play();  // Play hover sound when hovering
   } else {
     orcaImage.src = 'assets/images/orca stil.png';  // Change back to the still image
   }
 }
+
     </script>
     <div class="warning-container" id="warning-container">
       <div class="warning-icon"><h1>⚠️WARNING-HEALTH AND SAFETY</h1></div>
