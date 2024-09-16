@@ -15,6 +15,14 @@
   .hover-play {
   display: inline-block;
 }
+  @font-face {
+  font-family: contb;
+  src:url(assets/contb.ttf);
+}
+      @font-face {
+  font-family: contl;
+  src:url(assets/contl.ttf);
+}
 
 </style>
 
@@ -30,6 +38,23 @@
       if (isMobile()) {
         window.location.href = 'https://webmii.online/mobile';  // Replace with your mobile page URL
       }
+      // Function to format and display the date
+      function displayDate() {
+        const weekdayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const d = new Date();
+        const weekday = weekdayNames[d.getDay()];
+        const day = d.getDate();
+        const month = d.getMonth() + 1;
+        const formattedDate = `${weekday} ${month}/${day}`;
+        
+        // Display the date in the element with class "date"
+        document.querySelector('.date').textContent = formattedDate;
+      }
+
+      // Call the displayDate function when the page loads
+      window.onload = function() {
+        displayDate();
+      };
     </script>
     
     <script>
