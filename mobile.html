@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="mobilestyle.css">
+    <link href="mobile.js">
+  </head>
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Miiverse</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  
+    <!-- SVG icons -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      style="width: 0; height: 0; position: absolute"
+    >
+      <linearGradient id="star-gradient" x2="1" y2="1">
+        <stop offset="0%" stop-color="#f6c119" />
+        <stop offset="100%" stop-color="#e79c46" />
+      </linearGradient>
+      <linearGradient id="navbar-gradient" x2="1" y2="1">
+        <stop offset="0%" stop-color="#a8a8a8" />
+        <stop offset="100%" stop-color="#696969" />
+      </linearGradient>
+
+      <symbol id="feed" viewBox="0 0 500 500">
+        <path
+          d="M460 183c0-39-13-75-39-103-25-26-60-42-100-45-4 0-7-3-6-8 0-5 6-9 11-9 42 3 81 19 109 49 28 29 43 69 43 113 0 5-5 10-10 10s-8-2-8-7Zm-53 6c-2-27-12-51-28-69-17-18-40-29-67-32-4-1-6-4-6-8 1-6 7-10 12-10 29 4 55 16 75 37 19 20 30 47 32 77 0 5-5 11-10 11-4 0-8-2-8-6Zm-46 11c-4 0-7-2-8-5-2-13-8-25-17-35-9-9-20-15-33-19-3-1-6-4-5-8 1-6 7-10 12-9 15 4 29 11 40 23 11 11 18 26 21 42 1 5-4 11-10 11ZM102 364c13 26 37 39 63 39h4c26 0 50-13 63-39l17 9a96 96 0 0 1-80 50h-4c-31 0-64-19-81-50l18-9Zm96-116h38v61h-38v-61Zm-96 0h37v61h-37v-61Zm-48-83h227c12 0 25 6 32 13 8 8 14 21 14 33v227c0 12-6 25-14 33-7 8-20 13-32 14H54c-12-1-26-6-33-14-8-8-13-21-14-33V211c1-12 6-25 14-33 7-7 21-13 33-13Zm-16 31c-4 5-6 8-6 15v227c0 7 2 11 6 16 5 4 9 6 16 6h227c6 0 10-2 15-6 4-5 7-9 6-16V211c1-7-2-10-6-15-5-4-9-7-15-6H54c-7-1-11 2-16 6Z"
+        />
+      </symbol>
+      <symbol id="community" viewBox="0 0 500 500">
+        <path
+          d="M467 330v108H336V330c0-20 9-37 23-48a94 94 0 1 1 84 0c14 11 24 28 24 48ZM169 330v108H38V330c0-20 10-37 24-48a94 94 0 1 1 84 0c14 11 23 28 23 48Z"
+        />
+        <path
+          d="M346 334v156H158V334c0-28 13-53 34-68a135 135 0 1 1 121 0c20 16 33 41 33 68Z"
+        />
+      </symbol>
+      <symbol id="message" viewBox="0 0 500 500">
+        <path
+          d="M35 112h429c7 1 17 5 22 9 4 4 8 15 9 22v266c-1 7-5 17-9 21-5 5-15 8-22 9H35c-7-1-17-4-22-9-4-4-8-14-9-21V143c1-7 5-18 9-22 5-4 15-8 22-9Zm9 287h411V172L266 295l-12 8-12-7L44 179Zm209-149 150-98H87Z"
+        />
+      </symbol>
+      <symbol id="notif" viewBox="0 0 500 500">
+        <path
+          d="M202 405H87c-19-1-40-9-52-21a82 82 0 0 1-22-52l-2-215c0-19 9-40 21-52 12-13 33-21 52-22h326c19 1 40 9 52 22 12 12 21 33 22 52l2 215c0 19-9 39-21 52a82 82 0 0 1-52 21H304l-51 77-51-77Zm83-35h128c12 1 19-4 27-11 8-8 12-16 11-27l-3-215c1-12-3-19-11-27s-15-12-27-11H84c-12-1-19 3-27 11s-12 15-11 27l3 214c-1 12 3 20 11 28 8 7 15 12 27 11h134l32 48 32-48ZM94 206h312v26H94v-26Zm0-64h312v25H94v-25Zm0 128h312v26H94v-26Z"
+        />
+      </symbol>
+      <symbol id="back" viewBox="0 0 500 500">
+        <path
+          d="M428 302c-9 130-94 144-163 146-52 1-118-1-118-1v-77l120 1c51 3 80-24 80-72 8-92-89-80-107-80l-1 85L22 174 240 40v92c27 5 190-23 188 170Z"
+          style="paint-order: stroke"
+        />
+      </symbol>
+      <symbol id="bag" fill="currentColor" viewBox="0 0 500 500">
+        <path
+          d="M 326.842 142.21 C 326.842 142.271 326.842 142.33 326.842 142.391 L 427.644 142.391 L 439.117 434.423 L 74.076 434.423 L 82.383 142.391 L 180.544 142.391 C 180.544 142.33 180.544 142.271 180.544 142.21 C 180.544 93.946 213.293 54.82 253.692 54.82 C 294.092 54.82 326.842 93.946 326.842 142.21 Z M 254.111 72.448 C 222.247 72.448 196.417 103.308 196.417 141.375 C 196.417 141.713 196.42 142.053 196.424 142.391 L 311.798 142.391 C 311.803 142.053 311.805 141.713 311.805 141.375 C 311.805 103.308 285.975 72.448 254.111 72.448 Z"
+        />
+      </symbol>
+      <symbol id="star" viewBox="0 0 16 16">
+        <path
+          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+        />
+      </symbol>
+      <symbol id="wrench" fill="currentColor" viewBox="0 0 500 500">
+        <path
+          d="M 214.707 412.448 C 191.897 437.754 155.132 441.798 132.589 421.48 C 110.047 401.162 110.264 364.175 133.074 338.869 L 200.646 263.902 C 176.566 218.145 182.087 160.334 218.725 119.686 C 260.529 73.305 328.759 64.909 379.995 96.75 L 289.696 192.036 L 340.864 240.525 L 427.363 149.25 C 449.251 194.388 443.067 250.202 407.412 289.76 C 376.635 323.907 331.536 337.465 289.438 329.536 Z M 171.262 353.799 C 157.096 353.799 145.612 365.283 145.612 379.449 C 145.612 393.615 157.096 405.099 171.262 405.099 C 185.428 405.099 196.912 393.615 196.912 379.449 C 196.912 365.283 185.428 353.799 171.262 353.799 Z"
+        />
+      </symbol>
+      <symbol id="note" fill="currentColor" viewBox="0 0 500 500">
+        <polygon
+          style="stroke: none"
+          points="284.226 288.916 284.157 261.888 345.305 325.965 320.253 325.965"
+        ></polygon>
+        <path
+          d="M 151.693 109.049 L 351.098 109.049 C 370.908 109.049 386.968 125.109 386.968 144.919 L 386.968 166.22 L 283.476 262.806 L 283.302 325.965 L 342.856 325.852 L 386.968 287.998 L 386.968 344.324 C 386.968 364.134 370.908 380.194 351.098 380.194 L 151.693 380.194 C 131.883 380.194 115.823 364.134 115.823 344.324 L 115.823 313.06 L 146.204 313.06 C 146.179 313.377 146.166 313.698 146.166 314.022 C 146.166 320.618 151.513 325.965 158.109 325.965 C 164.705 325.965 170.052 320.618 170.052 314.022 C 170.052 307.426 164.705 302.079 158.109 302.079 C 151.842 302.079 146.702 306.906 146.205 313.045 L 115.823 313.045 L 115.823 242.367 L 146.204 242.367 C 146.179 242.684 146.166 243.005 146.166 243.329 C 146.166 249.925 151.513 255.272 158.109 255.272 C 164.705 255.272 170.052 249.925 170.052 243.329 C 170.052 236.733 164.705 231.386 158.109 231.386 C 151.842 231.386 146.702 236.213 146.205 242.352 L 115.823 242.352 L 115.823 174.259 L 146.204 174.259 C 146.179 174.576 146.166 174.897 146.166 175.221 C 146.166 181.817 151.513 187.164 158.109 187.164 C 164.705 187.164 170.052 181.817 170.052 175.221 C 170.052 168.625 164.705 163.278 158.109 163.278 C 151.842 163.278 146.702 168.105 146.205 174.244 L 115.823 174.244 L 115.823 144.919 C 115.823 125.109 131.883 109.049 151.693 109.049 Z"
+        ></path>
+        <line x1="212.337" y1="177.662" x2="332.739" y2="177.662"></line>
+        <line x1="212.337" y1="224.635" x2="324.759" y2="224.635"></line>
+      </symbol>
+      <symbol id="draw" fill="currentColor" viewBox="0 0 500 500">
+        <path
+          d="M224 74c-6-5-32-37-117-27C44 54-17 144 4 224c12 47 60 99 105 100 67 1 62-77 12-76-81 2-97 66-79 111 23 58 103 83 103 83 13 7 25-11 8-20 0 0-71-27-91-70-15-33-7-77 53-83 28-3 33 34-6 34-34 0-73-50-82-89-9-41 13-128 85-141 65-12 87 12 96 19 18 13 30-6 16-18Z"
+          style="paint-order: stroke"
+        />
+        <path
+          d="M254 111h122c10 0 18 8 18 18v279l-60 77c-8 10-25 10-34-1l-63-76V129c0-10 7-18 17-18Zm31 325h60l18-23h-94l16 23Z"
+          style="paint-order: stroke"
+          transform="rotate(46 315 302)"
+        />
+      </symbol>
+      <symbol id="discussion" fill="currentColor" viewBox="0 0 500 500">
+        <path
+          d="M 329.816 441.763 C 324.967 452.893 320.118 452.893 315.27 441.763 L 295.014 395.273 C 294.605 394.335 294.248 393.437 293.943 392.577 L 159.618 392.577 C 115.79 392.577 80.26 357.047 80.26 313.219 L 80.26 184.27 C 80.26 140.442 115.79 104.912 159.618 104.912 L 350.753 104.912 C 394.582 104.912 430.112 140.442 430.112 184.27 L 430.112 313.219 C 430.112 356.917 394.791 392.367 351.142 392.575 C 350.837 393.435 350.48 394.335 350.071 395.273 L 329.816 441.763 Z M 293.799 291.27 L 353.924 290.774 L 231.876 168.726 L 171.607 169.366 L 171.193 229.409 L 293.304 351.396 L 293.799 291.27 Z M 216.881 202.516 C 216.881 208.841 211.753 213.969 205.428 213.969 C 199.103 213.969 193.975 208.841 193.975 202.516 C 193.975 196.191 199.103 191.063 205.428 191.063 C 211.753 191.063 216.881 196.191 216.881 202.516 Z"
+          style="paint-order: stroke"
+        />
+      </symbol>
+      <symbol id="mii" fill="currentColor" viewBox="0 0 500 500">
+        <path
+          d="M 389.774 500 L 123.346 500 L 174.851 396.988 C 99.61 366.28 46.586 292.381 46.586 206.096 C 46.586 92.272 138.855 0 252.68 0 C 366.502 0 458.773 92.272 458.773 206.096 C 458.773 289.913 408.734 362.046 336.901 394.251 L 389.774 500 Z M 315.429 206.094 L 356.066 206.094 L 356.066 131.852 L 315.429 131.852 L 315.429 206.094 Z M 149.292 206.094 L 189.931 206.094 L 189.931 131.852 L 149.292 131.852 L 149.292 206.094 Z"
+          style="paint-order: stroke"
+        />
+        <path
+          d="M 356.066 268.231 C 335.046 309.068 294.168 332.813 252.68 332.813 C 211.191 332.813 170.311 309.068 149.292 268.231"
+        />
+      </symbol>
+      <symbol id="comment" fill="currentColor" viewBox="0 0 500 500">
+        <path
+          d="M274 415c-5 11-10 11-15 0l-20-48-2-3H82c-45 0-82-37-82-82V150c0-46 37-82 82-82h214c45 0 82 36 82 82v132c0 45-37 82-82 82l-1 3-21 48Z"
+          style="paint-order: stroke"
+        />
+        <path
+          d="M500 335c-5 115-122 104-122 104s75-14 67-87c-7-74-75-63-75-63l-1 57-143-97 143-97v55c13 0 136 14 131 128Z"
+          style="paint-order: stroke"
+        />
+      </symbol>
+      <symbol id="post-discuss" fill="currentColor" viewBox="0 0 500 500">
+        <path
+          d="M 355.695 464.423 C 349.518 478.595 343.342 478.595 337.171 464.423 L 311.374 405.219 C 310.853 404.021 310.395 402.881 310.009 401.786 L 117.518 401.786 C 61.704 401.786 16.456 356.541 16.456 300.728 L 16.456 136.511 C 16.456 80.7 61.704 35.452 117.518 35.452 L 382.354 35.452 C 438.172 35.452 483.418 80.7 483.418 136.511 L 483.418 300.728 C 483.418 356.37 438.438 401.516 382.853 401.785 C 382.463 402.877 382.008 404.021 381.485 405.219 L 355.695 464.423 Z"
+          style="paint-order: stroke"
+        />
+      </symbol>
+      <symbol id="bookmark" fill="currentColor" viewBox="0 0 500 500">
+        <path
+          d="M 304.029 404.406 L 79.104 179.709 L 79.866 69.112 L 190.88 67.933 L 415.689 292.742 L 304.941 293.655 Z M 140.314 100 C 122.967 100 108.905 114.062 108.905 131.409 C 108.905 148.756 122.967 162.818 140.314 162.818 C 157.661 162.818 171.723 148.756 171.723 131.409 C 171.723 114.062 157.661 100 140.314 100 Z"
+          style="paint-order: stroke"
+        />
+      </symbol>
+      <symbol id="popular" fill="currentColor" viewBox="0 0 500 500">
+        <path
+          d="M 354.469 474.772 C 347.838 489.994 341.207 489.994 334.576 474.772 L 306.875 411.194 C 306.315 409.911 305.827 408.682 305.41 407.507 L 121.709 407.507 C 61.771 407.507 13.18 358.916 13.18 298.978 L 13.18 122.629 C 13.18 62.691 61.771 14.1 121.709 14.1 L 383.103 14.1 C 443.042 14.1 491.633 62.691 491.633 122.629 L 491.633 298.978 C 491.633 358.738 443.328 407.22 383.635 407.504 C 383.218 408.68 382.73 409.911 382.17 411.194 L 354.469 474.772 Z M 256.327 83.322 L 184.761 186.606 L 101.656 110.808 L 114.795 268.373 C 148.046 274.025 216.865 284.833 256.318 284.715 C 296.878 284.788 367.03 273.405 397.886 268.027 L 410.996 110.808 L 327.891 186.606 L 256.327 83.322 Z M 395.308 298.947 C 360.727 304.751 295.845 314.688 256.337 314.802 C 216.052 314.736 150.939 304.632 117.342 298.924 L 119.768 328.015 C 119.768 328.015 210.402 346.244 256.327 346.244 C 302.25 346.244 392.885 328.015 392.885 328.015 L 395.308 298.947 Z"
+        />
+      </symbol>
+    </svg>
+
+    <!-- overlay -->
+    <div class="overlay-image">
+      <img class='overlay-image-img bsc-shadow' src="" alt="">
+      <button class="overlay-image-button">Back</button>
+    </div>
+
+    <!-- navbar -->
+    <nav class="navbar bsc-shadow">
+      <div class="navbar-user">
+        <img src="https://files.catbox.moe/ggj8xf.webp" alt="" />
+        <span>User Page</span>
+      </div>
+      <hr>
+      <div class="navbar-feed">
+        <svg style="fill: url(#navbar-gradient) blue"><use xlink:href="#feed"></use></svg>
+        <span>Activity Feed</span>
+      </div>
+      <hr>
+      <div class="navbar-community active">
+        <svg style="fill: url(#navbar-gradient) blue"><use xlink:href="#community"></use></svg>
+        <span>Communities</span>
+      </div>
+      <hr>
+      <div class="navbar-message">
+        <svg style="fill: url(#navbar-gradient) blue"><use xlink:href="#message"></use></svg>
+        <span>Messages</span>
+      </div>
+      <hr>
+      <div class="navbar-notif">
+        <svg style="fill: url(#navbar-gradient) blue"><use xlink:href="#notif"></use></svg>
+        <span>Notifications</span>
+      </div>
+      <hr>
+      <div class="navbar-back">
+        <svg style="fill: url(#navbar-gradient) blue"><use xlink:href="#back"></use></svg>
+        <span>Back</span>
+      </div>
+    </nav>
+
+    <!-- content -->
+    <header class="header">
+      <div class="header-title-bg">
+        <h1 class="header-title text-shadow container">New collection minting! </h1>
+      </div>
+      <div class="header-img"></div>
+    </header>
+
+    <main class="main">
+      <section class="main-header-bg">
+        <section class="main-header container">
+          <div class="main-header-left">
+            <img class="main-header-left-icon bsc-round bsc-shadow bsc-border" src="https://files.catbox.moe/596tbn.png" alt="">
+            <div class="main-header-left-system">solana</div>
+          </div>
+
+          <div class="main-header-mid">
+            <p class="main-header-mid-type mid-shadow">Main Community</p>
+            <h2 class="main-header-mid-title">Web Mii</h2>
+            <p class="main-header-mid-desc">
+              Collection of personalized mii characters from the nostalgic days of the wii. 
+            </p>
+          </div>
+
+          <div class="main-header-right">
+            <a href="https://launchmynft.io/" target="_blank" class="mint-button-link">
+            <button class="shop-button">
+              <svg>
+                <use xlink:href="#bag"></use>
+              </svg>
+              <span >Mint!</span>
+            </button>
+            </a>
+            <div class="more-buttons">
+              <button class="fav-button">
+                <svg style="fill: url(#star-gradient) blue">
+                  <use xlink:href="#star"></use>
+                </svg>
+              </button>
+              <button class="set-button">
+                <svg>
+                  <use xlink:href="#wrench"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="main-content-bg">
+        <section class="main-content container">
+          <div class="subcontent-journal">
+            <div class="subcontent-title">
+              <svg class="subcontent-icon">
+                <use xlink:href="#note"></use>
+              </svg>
+              <div class="title-text">
+                <span>
+                  <h3>More coming soon ;)</h3>
+                </span>
+              </div>
+            </div>
+
+            <div class="subcontent-content">
+              <!--  -->
+          
+              </div>
+              <!--  -->
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
