@@ -303,7 +303,7 @@ body.channel-splash {
 /* channel splash screen */
 
 .splash-screen {
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -311,10 +311,17 @@ body.channel-splash {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: opacity 500ms ease, transform 500ms ease;
+  transition: opacity 800ms ease;
   opacity: 0;
-  transform: scale(0.3);
+  transform: translateY(-100%); /* Move off-screen (above the viewport) */
 }
+
+/* When the splash screen is active */
+.splash-screen.active {
+  opacity: 1;
+  transform: translateY(0); /* Move back to its original position */
+}
+
 
 .channel-splash .splash-screen {
   top: 0;
