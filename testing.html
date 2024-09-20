@@ -12,6 +12,10 @@
 
 
 <style>
+  .warning-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
   .hover-play {
   display: inline-block;
 }
@@ -171,27 +175,30 @@
       <audio id="bg-music" src="assets/audio/bg-music.mp3" loop volume="0.01"></audio>
     </div>
 
-    <script>
-      let musicPlayed = false;
-      let selectedChannel = null;
+<script>
+    let musicPlayed = false;
+    let selectedChannel = null;
+    let enteredText = ''; // Store the typed text for party mode
+    let partyModeActive = false; // Track if party mode is active
 
-      function selectChannel(channelId) {
-          selectedChannel = channelId;
-          console.log('Selected channel:', selectedChannel);
-          // Add any additional UI changes for selecting a channel here
-      }
+    function selectChannel(channelId) {
+        selectedChannel = channelId;
+        console.log('Selected channel:', selectedChannel);
+        // Add any additional UI changes for selecting a channel here
+    }
 
-      function start() {
-          if (selectedChannel === 1) {
-              window.open('https://launchmynft.io/', '_blank'); // Change this link as needed
-          } else if (selectedChannel === 4) {
-              window.open('https://x.com/webmiionline', '_blank'); // Change this link as needed
-          } else {
-              console.log('No channel selected or invalid channel');
-              // Optionally provide feedback to the user if needed
-          }
-      }
-      function hoverChannel(channelId) {
+    function start() {
+        if (selectedChannel === 1) {
+            window.open('https://launchmynft.io/', '_blank'); // Change this link as needed
+        } else if (selectedChannel === 4) {
+            window.open('https://x.com/webmiionline', '_blank'); // Change this link as needed
+        } else {
+            console.log('No channel selected or invalid channel');
+            // Optionally provide feedback to the user if needed
+        }
+    }
+
+    function hoverChannel(channelId) {
         console.log('Hovered on channel:', channelId);
         // Add any additional hover effects here
     }
@@ -200,35 +207,62 @@
         console.log('Unhovered from channel:', channelId);
         // Add any additional unhover effects here
     }
-      function handleStart() {
-          if (musicPlayed) {
-              return;
-          }
-          musicPlayed = true;
-          document.querySelector('.main-menu').style.display = 'block';
-          const warningContainer = document.getElementById('warning-container');
-          warningContainer.classList.add('hidden');
-          const startupMusic = document.getElementById('startup-music');
-          startupMusic.play();
-          setTimeout(function() {
-              warningContainer.style.display = 'none';
-              setTimeout(function() {
-                  const bgMusic = document.getElementById('bg-music');
-                  bgMusic.play();
-              }, 0);
-          }, 1650);
-      }
 
-      document.addEventListener('keydown', function(event) {
-          if (event.code === 'Space') {
-              handleStart();
-          }
-      });
+    function handleStart() {
+        if (musicPlayed || partyModeActive) {
+            return;
+        }
+        musicPlayed = true;
+        document.querySelector('.main-menu').style.display = 'block';
+        const warningContainer = document.getElementById('warning-container');
+        warningContainer.classList.add('hidden');
+        const startupMusic = document.getElementById('startup-music');
+        startupMusic.play();
+        setTimeout(function () {
+            warningContainer.style.display = 'none';
+            setTimeout(function () {
+                const bgMusic = document.getElementById('bg-music');
+                bgMusic.play();
+            }, 0);
+        }, 1650);
+    }
 
-      document.addEventListener('click', handleStart);
-      document.addEventListener('touchstart', handleStart);
+    function startPartyMode() {
+        partyModeActive = true; // Set party mode as active
+        document.querySelector('.main-menu').style.display = 'block';
+        const warningContainer = document.getElementById('warning-container');
+        warningContainer.classList.add('hidden');
+        const partyMusic = new Audio('assets/party.mp3'); // Play party music
+        partyMusic.play();
+    }
+
+    document.addEventListener('keydown', function (event) {
+        enteredText += event.key.toLowerCase(); // Add typed key to enteredText
+
+        // Check if "party" was typed
+        if (enteredText.includes('party') && !partyModeActive) {
+            musicPlayed = true; // Mark music as played
+            startPartyMode();   // Start party mode
+            enteredText = '';   // Reset enteredText
+        } else if (event.code === 'Space' && !musicPlayed && !partyModeActive) {
+            handleStart();      // Handle regular start if "party" wasn't typed
+        }
+    });
+
+    // In party mode, we still want to handle page clicks
+    document.addEventListener('click', function () {
+        if (!partyModeActive) {
+            handleStart();
+        }
+    });
+
+    document.addEventListener('touchstart', function () {
+        if (!partyModeActive) {
+            handleStart();
+        }
+    });
 </script>
-  
+
 
     <div class="sfx">
       <audio id="hover" src="assets/audio/button-hover.mp3"></audio>
