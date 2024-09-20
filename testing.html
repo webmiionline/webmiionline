@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Web Mii</title>
+    <title>Web Mii Online</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Asap:500" rel="stylesheet">
@@ -14,6 +14,23 @@
 <style>
   .hover-play {
   display: inline-block;
+}
+  @font-face {
+  font-family: contb;
+  src:url(assets/contb.ttf);
+}
+      @font-face {
+  font-family: contl;
+  src:url(assets/contl.ttf);
+}
+        @font-face {
+  font-family: rodin;
+  src:url(assets/fot-rodin-pro-db.otf);
+}
+        @font-face {
+  font-family: rodinb;
+  src:url(assets/Rodin-Bold.ttf
+);
 }
 
 </style>
@@ -28,77 +45,79 @@
     
       // If the user is on mobile, redirect them to a different page
       if (isMobile()) {
-        window.location.href = 'https://different-books.surge.sh/web-mii/mobile';  // Replace with your mobile page URL
+        window.location.href = 'https://webmii.online/mobile';  // Replace with your mobile page URL
       }
+      // Function to format and display the date
+      function displayDate() {
+        const weekdayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const d = new Date();
+        const weekday = weekdayNames[d.getDay()];
+        const day = d.getDate();
+        const month = d.getMonth() + 1;
+        const formattedDate = `${weekday} ${month}/${day}`;
+        
+        // Display the date in the element with class "date"
+        document.querySelector('.date').textContent = formattedDate;
+      }
+
+      // Call the displayDate function when the page loads
+      window.onload = function() {
+        displayDate();
+      };
     </script>
     
-    <script>
-      const preloadImage = new Image();
-preloadImage.src = 'assets/images/giphy.webp';  // Preload the gif to avoid delay
 
-function hoverOrcaImage(isHovering) {
-  const orcaImage = document.getElementById('orcaImage');
-  if (isHovering) {
-    orcaImage.src = 'assets/images/giphy.webp';  // Change to the GIF/WEBP when hovering
-  } else {
-    orcaImage.src = 'assets/images/orca stil.png';  // Change back to the still image
-  }
-}
-    </script>
     <div class="warning-container" id="warning-container">
       <div class="warning-icon"><h1>⚠️WARNING-HEALTH AND SAFETY</h1></div>
       <p><b>BEFORE ENTERING, READ YOUR OPERATIONS<br> MANUAL FOR IMPORTANT INFORMATION<br>  ABOUT YOUR HEALTH AND SAFETY.</b></p>
-      <p>Also online at<br> <a href="healthsafety/">www.webmii.com/healthsafety/</a></p>
+      <p>Also online at<br> <a href="healthsafety/">www.webmii.online/healthsafety/</a></p>
       <div class="continue-text">Press  <img src="assets/images/spacebar.png" alt="Spacebar" style="vertical-align: middle; height: 30px;">    or  <img src="assets/images/click.png" alt="Spacebar" style="vertical-align: middle; height: 30px;">  to continue.</div>
     </div>
 
+    
     <div class="main-menu" id="main-menu">
       <div class="top-section">
         <div class="channels">
           <div class="channels-container">
             <div class="col">
-              <div class="channel-icon occupied"><img src="assets/images/miichannel-mint2.jpg"><div class="hover" id="1" onmouseover="hover()" onclick="selectChannel(1); zip()" data-img="assets/images/miichannel-mint2.jpg"></div></div>
-              <div class="channel-icon blank"><div class="hover" id="2" onmouseover="" onclick="selectChannel(2); zip()"></div></div>
-              <div class="channel-icon blank"><div class="hover" id="3" onmouseover="" onclick="selectChannel(3)"></div></div>
-          </div>
-          <div class="col">
-              <div class="channel-icon occupied"><img src="assets/images/miichannel-twitter2.jpg"><div class="hover" id="4" onmouseover="hover()" onclick="selectChannel(4); zip()" data-img="assets/images/miichannel-twitter2.jpg"></div></div>
-              <div class="channel-icon blank"><div class="hover" id="5" onmouseover="" onclick="selectChannel(5)"></div></div>
-              <div class="channel-icon blank"><div class="hover" id="6" onmouseover="" onclick="selectChannel(6)"></div></div>
-          </div>
-          <div class="col">
-            <div class="channel-icon occupied">
-              <img src="assets/images/orca stil.png" id="orcaImage">
-              <div class="hover" id="7" 
-                   onmouseover="hoverOrcaImage(true)" 
-                   onmouseout="hoverOrcaImage(false)" 
-                   onclick="selectChannel(7); zip();" 
-                   data-img="assets/images/giphy.webp">
-              </div>
+                <div class="channel-icon occupied">
+                  <video id="video1" autoplay loop muted>
+                    <source src="https://files.catbox.moe/x8qlbs.mp4" type="video/mp4" >
+                  </video>
+                  <div class="hover" id="1" onmouseover="hoverChannel(1),  hover()" onmouseout="unhoverChannel(1)" onclick="selectChannel(1); zip()" data-video="https://files.catbox.moe/x8qlbs.mp4"></div>
+                </div>
+                <div class="channel-icon blank"><div class="hover" id="2" onmouseover="" onclick="selectChannel(2); zip()"></div></div>
+                <div class="channel-icon blank"><div class="hover" id="3" onmouseover="" onclick="selectChannel(3)"></div></div>
             </div>
-              <div class="channel-icon blank"><div class="hover" id="8" onmouseover="" onclick="selectChannel(8)"></div></div>
-              <div class="channel-icon blank"><div class="hover" id="9" onmouseover="" onclick="selectChannel(9)"></div></div>
+            <div class="col">
+                <div class="channel-icon occupied">
+                  <video id="video4" autoplay loop muted>
+                    <source src="https://files.catbox.moe/x8qlbs.mp4" type="video/mp4">
+                  </video>
+                  <div class="hover" id="4" onmouseover="hoverChannel(4) ,  hover()" onmouseout="unhoverChannel(4)" onclick="selectChannel(4); zip()" data-video="https://files.catbox.moe/x8qlbs.mp4"></div>
+                </div>
+                <div class="channel-icon blank"><div class="hover" id="5" onmouseover="" onclick="selectChannel(5)"></div></div>
+                <div class="channel-icon blank"><div class="hover" id="6" onmouseover="" onclick="selectChannel(6)"></div></div>
+            </div>
+            <div class="col">
+              <div class="channel-icon occupied">
+                <video id="video7" autoplay loop muted>
+                  <source src="https://files.catbox.moe/x8qlbs.mp4" type="video/mp4">
+                </video>
+                <div class="hover" id="7" onmouseover="hoverChannel(7) ,  hover()" onmouseout="unhoverChannel(7)" onclick="selectChannel(7); zip()" data-video="https://files.catbox.moe/x8qlbs.mp4"></div>
+              </div>
+                <div class="channel-icon blank"><div class="hover" id="8" onmouseover="" onclick="selectChannel(8)"></div></div>
+                <div class="channel-icon blank"><div class="hover" id="9" onmouseover="" onclick="selectChannel(9)"></div></div>
+            </div>
+            <div class="col">
+                <div class="channel-icon blank"><div class="hover" id="10" onmouseover="" onclick="selectChannel(10)"></div></div>
+                <div class="channel-icon blank"><div class="hover" id="11" onmouseover="" onclick="selectChannel(11)"></div></div>
+                <div class="channel-icon blank"><div class="hover" id="12" onmouseover="" onclick="selectChannel(12)"></div></div>
+            </div>
           </div>
-          <div class="col">
-              <div class="channel-icon blank"><div class="hover" id="10" onmouseover="" onclick="selectChannel(10)"></div></div>
-              <div class="channel-icon blank"><div class="hover" id="11" onmouseover="" onclick="selectChannel(11)"></div></div>
-              <div class="channel-icon blank"><div class="hover" id="12" onmouseover="" onclick="selectChannel(12)"></div></div>
-          </div>
-        </div>
         </div>
       </div>
 
-      <style>
-        .channel-icon .hover::before {
-          content: '';
-          position: absolute;
-          top: -10px;
-          left: -27px;
-          right: 1px;
-          bottom: -10px;
-   
-        }
-      </style>
 
       
 
@@ -161,13 +180,21 @@ function hoverOrcaImage(isHovering) {
           if (selectedChannel === 1) {
               window.open('https://launchmynft.io/', '_blank'); // Change this link as needed
           } else if (selectedChannel === 4) {
-              window.open('https://x.com/frubcoin', '_blank'); // Change this link as needed
+              window.open('https://x.com/webmiionline', '_blank'); // Change this link as needed
           } else {
               console.log('No channel selected or invalid channel');
               // Optionally provide feedback to the user if needed
           }
       }
+      function hoverChannel(channelId) {
+        console.log('Hovered on channel:', channelId);
+        // Add any additional hover effects here
+    }
 
+    function unhoverChannel(channelId) {
+        console.log('Unhovered from channel:', channelId);
+        // Add any additional unhover effects here
+    }
       function handleStart() {
           if (musicPlayed) {
               return;
@@ -204,5 +231,114 @@ function hoverOrcaImage(isHovering) {
       <audio id="zip" src="assets/audio/zip.mp3"></audio>
       <audio id="back" src="assets/audio/back.mp3"></audio>
     </div>
+    <script>
+
+      // UI audio
+function hover(){
+	var audio = document.getElementById("hover");
+	audio.play();
+}
+
+// click audio
+function select(){
+	var audio = document.getElementById("select");
+	audio.play();
+}
+
+// zip audio
+function zip(){
+	var audio = document.getElementById("zip");
+	audio.play();
+	select();
+	var music = document.getElementById("bg-music");
+	music.pause();
+}
+
+// back
+function back(){
+	var audio = document.getElementById("back");
+	audio.play();
+}
+
+// Define the array of weekday names
+const weekdayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+// Get the current date
+const d = new Date();
+
+// Get the name of the day of the week (e.g., "Sun")
+const weekday = weekdayNames[d.getDay()];
+
+// Get the day of the month (e.g., 15)
+const day = d.getDate();
+
+// Get the month (e.g., 9 for September). Adding 1 because getMonth() is zero-based.
+const month = d.getMonth() + 1;
+
+// Format the date as "Weekday Month/Day"
+const formattedDate = `${weekday} ${month}/${day}`;
+
+console.log(formattedDate); // e.g., "Sun 9/15"
+
+
+// delay function
+function delay(callback, ms) {
+  setTimeout(callback, ms);
+}
+
+$(document).ready(function() {
+  // go to main menu when channel is clicked
+  $("body").on("click", ".occupied .hover", function() {
+    var centerX = $(this).offset().left + $(this).width() / 2;
+    var centerY = $(this).offset().top + $(this).height() / 2;
+    $(".main-menu").css({ "transform-origin": centerX + "px " + centerY + "px 0px" });
+
+    var videoSrc = $(this).attr("data-video");
+    
+    // Remove any existing video element
+    $(".splash-screen").empty();
+    
+    // Create and append a video element
+    var videoElement = $("<video>", {
+      "src": videoSrc,
+      "autoplay": true,
+      "muted": true,   // Ensure it auto-plays without sound
+      "loop": true,    // Loop the video
+      "class": "splash-video"
+    }).css({
+      "position": "absolute",
+      "top": "40%",
+      "left": "50%",
+      "transform": "translate(-50%, -50%)",  // Center the video
+      "width": "100%",
+      "height": "80vh",
+      "object-fit": "cover"  // Ensures the video covers the splash screen area
+    });
+
+    $(".splash-screen").append(videoElement);
+
+    $(".main-menu").addClass("channel-splash");
+    $("body").addClass("channel-splash");
+    delay(function() {
+      $("body").removeClass("splash-switch");
+    }, 900);
+  });
+});
+
+	// back to main menu
+	$("body").on("click", ".menu-btn", function(){
+		$(".main-menu").removeClass("channel-splash");
+		$("body").removeClass("channel-splash");
+		$("body").addClass("splash-switch");
+		delay(function(){
+			$("body").removeClass("splash-switch");
+		}, 900);
+	});
+
+	// ignore screen warning
+	$("body").on("click", ".screen-message", function(){
+		$(".screen-message").addClass("hidden");
+	});
+    </script>
   </body>
 </html>
