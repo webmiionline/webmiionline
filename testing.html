@@ -174,64 +174,87 @@
     <script>
       let musicPlayed = false;
       let selectedChannel = null;
-
+      let typedInput = ""; // Variable to store typed input
+      const partyTrigger = "party"; // The word to match
+    
+      // Function to play custom party track
+      function playPartyTrack() {
+        const customAudio = new Audio('assets/party.mp3'); // Replace with the path to your custom audio track
+        customAudio.play();
+      }
+    
       function selectChannel(channelId) {
-          selectedChannel = channelId;
-          console.log('Selected channel:', selectedChannel);
-          // Add any additional UI changes for selecting a channel here
+        selectedChannel = channelId;
+        console.log('Selected channel:', selectedChannel);
+        // Add any additional UI changes for selecting a channel here
       }
-
-      function start() {
-          if (selectedChannel === 1) {
-              window.open('https://launchmynft.io/', '_blank'); // Change this link as needed
-          } else if (selectedChannel === 4) {
-              window.open('https://x.com/webmiionline', '_blank'); // Change this link as needed
-            } else if (selectedChannel === 7) {
-              window.open('https://x.com/SLEEPYSTONEDCAT', '_blank'); // Change this link as needed
-            } else if (selectedChannel === 10) {
-              window.open('https://x.com/PookieThePeng', '_blank'); // Change this link as needed
-          } else {
-              console.log('No channel selected or invalid channel');
-              // Optionally provide feedback to the user if needed
-          }
-      }
-      function hoverChannel(channelId) {
-        console.log('Hovered on channel:', channelId);
-        // Add any additional hover effects here
-    }
-
-    function unhoverChannel(channelId) {
-        console.log('Unhovered from channel:', channelId);
-        // Add any additional unhover effects here
-    }
+    
       function handleStart() {
-          if (musicPlayed) {
-              return;
-          }
-          musicPlayed = true;
-          document.querySelector('.main-menu').style.display = 'block';
-          const warningContainer = document.getElementById('warning-container');
-          warningContainer.classList.add('hidden');
-          const startupMusic = document.getElementById('startup-music');
-          startupMusic.play();
-          setTimeout(function() {
-              warningContainer.style.display = 'none';
-              setTimeout(function() {
-                  const bgMusic = document.getElementById('bg-music');
-                  bgMusic.play();
-              }, 0);
-          }, 1650);
-      }
+  if (musicPlayed) {
+    return;
+  }
+  musicPlayed = true;
 
-      document.addEventListener('keydown', function(event) {
-          if (event.code === 'Space') {
-              handleStart();
-          }
-      });
+  // Hide the warning container properly
+  const warningContainer = document.getElementById('warning-container');
+  warningContainer.style.display = 'none';  // This will fully hide the warning container
+  document.querySelector('.main-menu').style.display = 'block';
 
-      document.addEventListener('click', handleStart);
-      document.addEventListener('touchstart', handleStart);
-</script>
+  // Play startup music unless 'party' was typed
+  if (typedInput !== partyTrigger) {
+    const startupMusic = document.getElementById('startup-music');
+    startupMusic.play();
+    setTimeout(function() {
+      setTimeout(function() {
+        const bgMusic = document.getElementById('bg-music');
+        bgMusic.play();
+      }, 0);
+    }, 1650);
+  } else {
+    playPartyTrack();
+  }
+}
+
+// Function to handle typing 'party'
+function handleTyping(event) {
+  // Add the pressed key to the typed input
+  typedInput += event.key.toLowerCase();
+
+  // If the typed input exceeds the length of 'party', keep only the last characters
+  if (typedInput.length > partyTrigger.length) {
+    typedInput = typedInput.slice(-partyTrigger.length);
+  }
+
+  // Check if 'party' is typed
+  if (typedInput === partyTrigger) {
+    console.log("Party mode activated!");
+    handleStart();
+  }
+}
+
+// Space key triggers the start unless 'party' was typed
+document.addEventListener('keydown', function(event) {
+  if (event.code === 'Space' && typedInput !== partyTrigger) {
+    handleStart();
+  } else {
+    handleTyping(event); // Capture keys for typing 'party'
+  }
+});
+
+// Click or touch triggers the start unless 'party' was typed
+document.addEventListener('click', function() {
+  if (typedInput !== partyTrigger) {
+    handleStart();
+  }
+});
+
+document.addEventListener('touchstart', function() {
+  if (typedInput !== partyTrigger) {
+    handleStart();
+  }
+});
+
+    </script>
   
 
     <div class="sfx">
