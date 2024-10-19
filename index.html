@@ -90,7 +90,12 @@
                   </video>
                   <div class="hover" id="1" onmouseover="hoverChannel(1),  hover()" onmouseout="unhoverChannel(1)" onclick="selectChannel(1); zip()" data-video="https://files.catbox.moe/kerg6l.mp4"></div>
                 </div>
-                <div class="channel-icon blank"><div class="hover" id="2" onmouseover="" onclick="selectChannel(2); zip()"></div></div>
+                <div class="channel-icon occupied">
+                  <video id="video2" autoplay loop muted>
+                    <source src="assets/twiitter.mp4" type="video/mp4">
+                  </video>
+                  <div class="hover" id="2" onmouseover="hoverChannel(2) ,  hover()" onmouseout="unhoverChannel(2)" onclick="selectChannel(2); zip()" data-video="assets/twiitter.mp4"></div>
+                </div>
                 <div class="channel-icon blank"><div class="hover" id="3" onmouseover="" onclick="selectChannel(3)"></div></div>
             </div>
             <div class="col">
@@ -100,7 +105,12 @@
                   </video>
                   <div class="hover" id="4" onmouseover="hoverChannel(4) ,  hover()" onmouseout="unhoverChannel(4)" onclick="selectChannel(4); zip()" data-video="https://files.catbox.moe/jqp79h.mp4"></div>
                 </div>
-                <div class="channel-icon blank"><div class="hover" id="5" onmouseover="" onclick="selectChannel(5)"></div></div>
+                <div class="channel-icon occupied">
+                  <video id="video5" autoplay loop muted>
+                    <source src="assets/diiscord channel.mp4" type="video/mp4">
+                  </video>
+                  <div class="hover" id="5" onmouseover="hoverChannel(5) ,  hover()" onmouseout="unhoverChannel(5)" onclick="selectChannel(5); zip()" data-video="assets/diiscord channel.mp4"></div>
+                </div>
                 <div class="channel-icon blank"><div class="hover" id="6" onmouseover="" onclick="selectChannel(6)"></div></div>
             </div>
             <div class="col">
@@ -154,7 +164,7 @@
 
     <div class="splash-bar">
       <div class="splash-buttons">
-        <a href="javascript:void(0)" class="btn menu-btn" onmouseover="hover()" onclick="back()">Web Mii</a>
+        <a href="javascript:void(0)" class="btn menu-btn" onmouseover="hover()" onclick="back()">Web Mii Menu</a>
         <a href="javascript:void(0)" class="btn" onmouseover="hover()" onclick="start(); select()">Start</a>
       </div>
     </div>
@@ -191,11 +201,15 @@
         if (selectedChannel === 1) {
             window.open('https://launchmynft.io/', '_blank'); // Change this link as needed
         } else if (selectedChannel === 4) {
-            window.open('https://x.com/webmiionline', '_blank'); // Change this link as needed
+            window.open('https://launchmynft.io/', '_blank'); // Change this link as needed
 		} else if (selectedChannel === 7) {
             window.open('https://x.com/sleepystonedcat', '_blank'); // Change this link as needed
 		} else if (selectedChannel === 10) {
-            window.open('https://x.com/PookieThePeng', '_blank'); // Change this link as needed
+      window.open('https://x.com/PookieThePeng', '_blank'); // Change this link as needed
+		} else if (selectedChannel === 5) {
+      window.open('https://discord.gg/', '_blank'); // Change this link as needed
+		} else if (selectedChannel === 2) {
+            window.open('https://x.com/webmiionline', '_blank'); // Change this link as needed
         } else {
             console.log('No channel selected or invalid channel');
             // Optionally provide feedback to the user if needed
